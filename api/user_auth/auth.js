@@ -8,6 +8,7 @@ var jwt = require('jsonwebtoken');
 
 // Middleware to check if user exists
 function checkIfUserExist(req, res, next) {
+  console.log(req.body);
   if (req.body.reqUserName && req.body.password) {
     knex('users')
     .where({userName: req.body.reqUserName.toLowerCase()})
