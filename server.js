@@ -5,7 +5,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors')
 
-const api = require('./api/router');
+const auth = require('./api/user_auth/auth');
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.use('/api/v1', api);
+app.use('/api/v1/auth', auth);
 
 app.all('*', (req,res,next) => {
   res.sendFile('index.html', { root: __dirname + '/dist/'})
