@@ -1,5 +1,5 @@
 .header-container {
-    z-index: 9 !important;
+  z-index: 9 !important;
 
   .sub-reddit-bar {
     display: -webkit-box;
@@ -38,11 +38,32 @@
       background-position: center;
     }
 
-    .user-auth{
+    .user-is-auth{
       background: rgb(239, 247, 255);
       color: grey;
       height: 20px;
-      width: 280px;
+      min-width: 10%;
+      text-align: left;
+      border-top-left-radius: 7px;
+      line-height: 12px;
+      padding: 4px;
+
+      // align-self: flex-end;
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+
+      a {
+        cursor: pointer;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+    .user-isnt-auth{
+      background: rgb(239, 247, 255);
+      color: grey;
+      height: 20px;
+      min-width: 10%;
       text-align: center;
       border-top-left-radius: 7px;
       line-height: 12px;
@@ -56,6 +77,7 @@
       a {
         cursor: pointer;
       }
+
     }
   }
 }

@@ -17,17 +17,14 @@ class ModalUser extends Component {
   render(){
     return(
       <div onClick={this.hideModal.bind(this)} className="modal-background animated fadeIn">
-        <div onClick={this.test.bind(this)} className="modal animated slideInDown">
+        <div onClick={this.test.bind(this)} className="modall animated slideInDown">
           <a className="fa fa-times exit-modal" aria-hidden="true"onClick={this.hideModal.bind(this)}></a>
 
           <div className="split-left">
-            <h5>Create A New Account</h5>
             <Signup/>
           </div>
 
           <div className="split-right">
-          <h5>Log In</h5>
-
             <Signin/>
           </div>
 

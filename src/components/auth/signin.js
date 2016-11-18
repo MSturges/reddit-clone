@@ -23,7 +23,9 @@ class Signin extends Component {
     const { handleSubmit, fields: { reqUserName, password}} = this.props
 
     return(
+
       <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+      <h5>Log In</h5>
 
         {reqUserName.touched && reqUserName.error && <div className="error">{reqUserName.error}</div>}
         <fieldset className="form-group">

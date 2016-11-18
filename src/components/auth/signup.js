@@ -24,6 +24,7 @@ class Signup extends Component {
 
     return(
       <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+      <h5>Create A New Account</h5>
 
         {reqUserName.touched && reqUserName.error && <div className="error">{reqUserName.error}</div>}
         <fieldset className="form-group">

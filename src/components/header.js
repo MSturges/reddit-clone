@@ -6,8 +6,6 @@ import * as actions from '../actions';
 
 class Header extends Component {
 
-
-
   showModal(){
     this.props.showModal();
   }
@@ -26,8 +24,8 @@ class Header extends Component {
         <div className="sub-reddit-bar"></div>
         <div className="header">
         <div className="header-image"></div>
-        <div className="user-auth">
-        <span>Welcome: {this.props.userName}!<a onClick={this.logout.bind(this)}>Logout</a></span>
+        <div className="user-is-auth">
+        <span>Welcome: {this.props.userName}<a onClick={this.logout.bind(this)}>Logout</a></span>
         </div>
         </div>
         </div>
@@ -38,7 +36,7 @@ class Header extends Component {
         <div className="sub-reddit-bar"></div>
         <div className="header">
         <div className="header-image"></div>
-        <div className="user-auth">
+        <div className="user-isnt-auth">
         <span>Want to join?<a onClick={this.showModal.bind(this)}> Log in or Sign Up </a>in seconds.</span>
         </div>
         </div>
