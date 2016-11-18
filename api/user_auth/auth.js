@@ -15,7 +15,7 @@ function checkIfUserExist(req, res, next) {
     .first()
     .then(function(user) {
       if (user.userName == req.body.reqUserName.toLowerCase()) {
-        res.status(200).json({error: 'Oops, A user with this username exists already!'});
+        res.status(400).json({error: 'Oops, A user with this username exists already!'});
       } else{
         return next();
       }
@@ -24,7 +24,7 @@ function checkIfUserExist(req, res, next) {
       return next();
     })
   } else {
-    res.status(200).json({error: 'Invalid User Name, or Password'});
+    res.status(400).json({error: 'Invalid User Name, or Password'});
   }
 }
 
@@ -44,7 +44,7 @@ router.post('/signup', checkIfUserExist, function (req, res, next) {
       res.status(200).json({token: token, user: userObj});
     })
     .catch(function(err){
-      res.status(200).json(err);
+      res.status(400).json(err);
     })
   }
 });
@@ -61,14 +61,14 @@ router.post('/signin', function(req, res, next) {
         var token = jwt.sign({ id: user.id }, process.env.SECRET);
         res.status(200).json({token: token, user: user_obj});
       } else {
-        res.status(200).json({error: 'Invalid User Name, or Password'});
+        res.status(400).json({error: 'Invalid User Name, or Password'});
       }
     })
     .catch(function(err) {
       console.log('error in login', err);
     })
   } else {
-    res.status(200).json({error: 'Please completely fill out the login form'});
+    res.status(400).json({error: 'Please completely fill out the login form'});
   }
 });
 

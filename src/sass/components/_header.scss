@@ -1,4 +1,5 @@
 .header-container {
+    z-index: 9 !important;
 
   .sub-reddit-bar {
     display: -webkit-box;
@@ -52,14 +53,9 @@
       right: 0px;
       bottom: 0px;
 
-    a{
-      cursor: pointer;
+      a {
+        cursor: pointer;
+      }
     }
-
-
-
-
-    }
-
   }
 }
