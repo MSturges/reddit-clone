@@ -3,9 +3,14 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
 class Header extends Component {
+
   test(){
-    console.log('hello');
+    return(
+    <div>helloooooo</div>
+    );
   }
+
+
   render(){
 
 
@@ -23,9 +28,19 @@ class Header extends Component {
         </div>
 
       </div>
+
+
+
       </div>
     );
   }
 }
+// <div className="user-auth">
+// <span>Want to join?
+// <a onClick={this.test.bind(this)}> Login or Sign Up </a>
+// in seconds.
+// </span>
+//
+// </div>
 
 export default Header;
