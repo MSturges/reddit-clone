@@ -1,0 +1,24 @@
+{
+  "name": "dist",
+  "homepage": "https://github.com/MSturges/reddit-clone",
+  "authors": [
+    "MSturges <Sturges3232@gmail.com>"
+  ],
+  "description": "",
+  "main": "./lib",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.3",
+    "devicons": "^1.8.0",
+    "animate.css": "^3.5.2"
+  }
+}
