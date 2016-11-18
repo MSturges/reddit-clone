@@ -2,17 +2,17 @@ import {
   AUTH_USER,
   SIGNUP_ERROR,
   SIGNIN_ERROR,
+  UNAUTH_USER,
   DELETE_ERROR
 } from '../actions/types';
 
 
-export default function(state = {}, action) {
+export default function(state = { authenticated: false }, action) {
 
-  // console.log('action', action);
   switch(action.type) {
 
     case AUTH_USER:
-    return { ...state, error: '', authenticated: true};
+    return { ...state, error: '', authenticated: true, user: action.payload};
 
     case SIGNIN_ERROR:
     return { ...state, signInError: action.payload };
@@ -23,6 +23,8 @@ export default function(state = {}, action) {
     case DELETE_ERROR:
     return { ...state, signUpError: '', signInError: ''}
 
+    case UNAUTH_USER:
+    return { ...state, authenticated: false, user: ''}
   }
   return state;
 }

@@ -3,6 +3,7 @@ import {
   AUTH_USER,
   SIGNIN_ERROR,
   SIGNUP_ERROR,
+  UNAUTH_USER,
   SHOW_MODAL,
   HIDE_MODAL,
   DELETE_ERROR } from './types';
@@ -18,7 +19,10 @@ import {
         responseType: 'json'
       })
       .then(response => {
-        dispatch({ type: AUTH_USER });
+        dispatch({
+          type: AUTH_USER,
+          payload: response.data.user.username
+        });
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('userName', response.data.user.id);
         localStorage.setItem('userId', response.data.user.username);
@@ -43,7 +47,10 @@ import {
         responseType: 'json'
       })
       .then(response => {
-        dispatch({ type: AUTH_USER });
+        dispatch({
+          type: AUTH_USER,
+          payload: response.data.user.username
+        });
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('userName', response.data.user.id);
         localStorage.setItem('userId', response.data.user.username);
@@ -56,6 +63,28 @@ import {
         });
       });
     }
+  }
+
+  export function userIsSignedIn({user}){
+    return function(dispatch){
+      dispatch({
+        type: AUTH_USER,
+        payload: user
+      });
+    }
+  }
+
+  export function logout() {
+
+    localStorage.removeItem('token');
+    localStorage.removeItem('userName');
+    localStorage.removeItem('userId');
+    return function(dispatch){
+      dispatch({
+        type: UNAUTH_USER,
+      })
+    }
+
   }
 
   export function showModal(){

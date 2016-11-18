@@ -12,24 +12,48 @@ class Header extends Component {
     this.props.showModal();
   }
 
+  logout(){
+    this.props.logout();
+  }
+
   render(){
-    return(
-      <div className="header-container">
+
+
+    if (this.props.authenticated) {
+
+      return (
+        <div className="header-container">
         <div className="sub-reddit-bar"></div>
         <div className="header">
         <div className="header-image"></div>
-          <div className="user-auth">
-            <span>Want to join?<a onClick={this.showModal.bind(this)}> Log in or Sign Up </a>in seconds.</span>
-          </div>
+        <div className="user-auth">
+        <span>Welcome: {this.props.userName}!<a onClick={this.logout.bind(this)}>Logout</a></span>
         </div>
-      </div>
-    );
+        </div>
+        </div>
+      );
+    } else{
+      return(
+        <div className="header-container">
+        <div className="sub-reddit-bar"></div>
+        <div className="header">
+        <div className="header-image"></div>
+        <div className="user-auth">
+        <span>Want to join?<a onClick={this.showModal.bind(this)}> Log in or Sign Up </a>in seconds.</span>
+        </div>
+        </div>
+        </div>
+      );
+    }
+
   }
 }
 
 function mapStateToProps(state){
   return{
-    toggleModal: state.modal.modal
+    toggleModal: state.modal.modal,
+    authenticated: state.auth.authenticated,
+    userName: state.auth.user
   }
 }
 
