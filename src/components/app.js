@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import ModalUser from './modal_user';
-import Header from './header';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+
+import Header from './header';
+import Content from './content';
+import ModalUser from './modal_user';
 
 
 
@@ -22,7 +24,8 @@ class App extends Component {
       <Header/>
       { this.props.toggleModal ? <ModalUser /> : null }
 
-      {this.props.children}
+      <Content/>
+
 
       </div>
     );

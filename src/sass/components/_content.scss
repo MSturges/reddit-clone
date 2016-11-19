@@ -1,0 +1,19 @@
+.conetent-container {
+  width:100%;
+  min-height:600px;
+}
+.post-container {
+  width:auto;
+  min-height: 600px;
+  margin: 1px;
+  border: 1px solid blue;
+  overflow:hidden;
+}
+.side-container {
+  min-height: 600px;
+  width:300px;
+  border: 1px solid black;
+  margin-left: 1px;
+  margin-right: 1px;
+  float:right;
+}

@@ -25,7 +25,7 @@ function validityCheck(req, res, next) {
     }
   }
   catch(err) {
-    res.status(200).json({ error: err.message });
+    res.status(400).json({ error: err.message });
   }
 });
 
