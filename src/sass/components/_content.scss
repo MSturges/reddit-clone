@@ -2,14 +2,12 @@
   width:100%;
   min-height:600px;
 }
-
 .post-container {
   width:auto;
   min-height: 600px;
   margin: 1px;
   overflow:hidden;
 }
-
 .side-container {
   min-height: 600px;
   width:300px;
@@ -88,7 +86,6 @@
       padding: 5px;
     }
   }
-
   .side-submit-link{
     display: block;
     width: 100%;
@@ -112,7 +109,6 @@
     background: linear-gradient(rgb(255, 255, 255), rgb(51, 102, 153));
     border: 1px solid rgb(170, 170, 170);
   }
-
   .advertising-two {
     margin-top: 10px;
     height: 170px;
@@ -127,6 +123,11 @@
       padding: 5px;
     }
   }
-
-
+  .side-footer {
+    margin-top: 8px;
+    height: 30px;
+    min-width: 100%;
+    background: rgb(45, 45, 45);
+    border: 1px solid rgb(170, 170, 170);
+  }
 }

@@ -2,12 +2,12 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import App from './components/app';
-import Signup from './components/auth/signup';
+import SubmitLink from './components/submit_link';
+
 
 export default (
   <Route path="/" component={App}>
-    <Route path="/signup" component={Signup}/>
+  <IndexRoute component={App} />
+  <Route path="/submit" component={SubmitLink}/>
   </Route>
 );
-
-// <IndexRoute component={JokesIndex} />

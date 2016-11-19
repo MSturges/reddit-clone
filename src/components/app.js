@@ -23,8 +23,9 @@ class App extends Component {
       <div className="app_container">
       <Header/>
       { this.props.toggleModal ? <ModalUser /> : null }
-
       <Content/>
+      
+      {this.props.children}
 
 
       </div>
