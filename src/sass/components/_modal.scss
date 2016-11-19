@@ -41,10 +41,10 @@
       float: left;
       padding-top: 60px;
       width: 50%;
+      height: 420px;
       padding-left: 60px;
       padding-right: 60px;
-
-      border-right: 1px solid rgb(130, 130, 130) ;
+      border-right: 1px solid rgb(130, 130, 130) !important;
 
       h5{
         padding-bottom: 30px;
@@ -72,9 +72,10 @@
 
   .modal-background {
     .modall {
-      min-height: 700px !important;
-      width: 95% !important;
+      height: auto !important;
+      width: 94% !important;
       .split-left {
+        height: auto;
         float: none !important;
         width: 100% !important;
         border: none !important;
