@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors')
 
 const auth = require('./api/user_auth/auth');
+const videos = require('./api/videos');
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use('/api/v1/auth', auth);
+app.use('/api/v1/videos', videos);
 
 app.all('*', (req,res,next) => {
   res.sendFile('index.html', { root: __dirname + '/dist/'})

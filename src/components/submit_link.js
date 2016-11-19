@@ -8,7 +8,14 @@ class SubmitLink extends Component {
 
   render(){
     return (
-      <div className="main-container">Yo dawg here you submit your link</div>
+      <div className="main-container">
+
+
+
+  
+
+
+      </div>
     )
   }
 }
