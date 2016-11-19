@@ -28,12 +28,15 @@ function validityCheck(req, res, next) {
 };
 
 router.post('/addVideo', function(req, res, next) {
+
+
   if (req.body.id && req.body.title && req.body.embed_url) {
     knex('videos')
     .insert({
       creator_id: req.body.id,
       title: req.body.title,
-      embed_url: req.body.embed_url
+      embed_url: req.body.embed_url,
+      rating: 1
     })
     .then(function(){
       res.status(200).json({success: 'Success'});

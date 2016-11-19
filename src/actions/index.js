@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { browserHistory } from 'react-router';
 import {
   AUTH_USER,
   SIGNIN_ERROR,
@@ -6,7 +7,9 @@ import {
   UNAUTH_USER,
   SHOW_MODAL,
   HIDE_MODAL,
-  DELETE_ERROR } from './types';
+  DELETE_ERROR,
+  CREATE_VIDEO,
+  VIDEO_ERROR } from './types';
 
   const API_URL = "http://localhost:1337"
 
@@ -52,8 +55,8 @@ import {
         });
         dispatch({ type: DELETE_ERROR });
         localStorage.setItem('token', response.data.token);
-        localStorage.setItem('userName', response.data.user.id);
-        localStorage.setItem('userId', response.data.user.username);
+        localStorage.setItem('userId', response.data.user.id);
+        localStorage.setItem('userName', response.data.user.username);
         dispatch({ type: HIDE_MODAL });
       })
       .catch(error => {
@@ -84,7 +87,6 @@ import {
         type: UNAUTH_USER,
       })
     }
-
   }
 
   export function showModal(){
@@ -97,5 +99,29 @@ import {
     return function(dispatch){
       dispatch({ type: HIDE_MODAL });
       dispatch({type: DELETE_ERROR });
+    }
+  }
+
+  export function submitVideo({title, embed_url, id}){
+
+    return function(dispatch){
+      axios({
+        url: `${API_URL}/api/v1/videos/addVideo`,
+        data: { title, embed_url, id },
+        method: 'post',
+        responseType: 'json'
+      })
+      .then(response => {
+        dispatch({
+          type: CREATE_VIDEO,
+        })
+        browserHistory.push('/');
+      })
+      .catch(error => {
+        dispatch({
+          type: VIDEO_ERROR,
+          payload: error.response.data.error
+        });
+      });
     }
   }

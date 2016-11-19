@@ -7,12 +7,11 @@ import SideContent from './side_content';
 import ModalUser from './modal_user';
 
 
-
 class App extends Component {
 
   componentWillMount(){
     const token = localStorage.getItem('token');
-    const user = localStorage.getItem('userId');
+    const user = localStorage.getItem('userName');
     if (token && user) {
       this.props.userIsSignedIn({user})
     }
