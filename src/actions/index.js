@@ -27,7 +27,6 @@ import {
         localStorage.setItem('userName', response.data.user.id);
         localStorage.setItem('userId', response.data.user.username);
         dispatch({ type: HIDE_MODAL });
-
       })
       .catch(error => {
         dispatch({
@@ -51,6 +50,7 @@ import {
           type: AUTH_USER,
           payload: response.data.user.username
         });
+        dispatch({ type: DELETE_ERROR });
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('userName', response.data.user.id);
         localStorage.setItem('userId', response.data.user.username);
