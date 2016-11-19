@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 
-class SubmitLink extends Component {
+class PostsContent extends Component {
 
 
   render(){
     return (
-      <div className="main-container">Yo dawg here you submit your link</div>
+      <div className="main-container">Yo dawg here you like posts</div>
     )
   }
 }
 
-export default connect(null)(SubmitLink);
+export default connect(null)(PostsContent);

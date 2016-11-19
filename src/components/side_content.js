@@ -5,7 +5,7 @@ import * as actions from '../actions';
 import { Link } from 'react-router'
 
 
-class Content extends Component {
+class SideContent extends Component {
 
   showModal(){
     this.props.showModal();
@@ -14,11 +14,10 @@ class Content extends Component {
   render(){
     console.log(this.props.authenticated);
     return (
-      <div className="conetent-container">
       <div className="side-container">
       <div className="side-search">
       </div>
-      {!this.props.authenticated ? <div className="side-login"> <SigninSide/> </div>: null}
+      {!this.props.authenticated ? <div className="side-login"> <SigninSide/> </div>: <a href="https://www.redditgifts.com/exchanges/manage/#/exchange/secret-santa-2016/"> <div className="reddit-santa"></div></a>}
       <a href="http://crushroutes.com">
       <div className="advertising-one">
       <h4>Find Your next Climb!</h4>
@@ -30,13 +29,9 @@ class Content extends Component {
       <h4>Get your weather here!</h4>
       </div>
       </a>
-      <div className="side-footer">
-      </div>
-      </div>
 
-      <div className="post-container">
-      </div>
-
+      <a href="https://github.com/MSturges/reddit-clone" className="side-submit-link">View On GitHub</a>
+  
       </div>
     )
   }
@@ -50,4 +45,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, actions)(Content);
+export default connect(mapStateToProps, actions)(SideContent);
