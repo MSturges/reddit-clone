@@ -12,7 +12,6 @@ class SideContent extends Component {
   }
 
   render(){
-    console.log(this.props.authenticated);
     return (
       <div className="side-container">
       <div className="side-search">
@@ -31,7 +30,7 @@ class SideContent extends Component {
       </a>
 
       <a href="https://github.com/MSturges/reddit-clone" className="side-submit-link">View On GitHub</a>
-  
+
       </div>
     )
   }

@@ -5,5 +5,20 @@
   margin-top: 8px;
   overflow:hidden;
   padding: 5px;
-  border: 1px solid blue;
+}
+
+.IframeWrapper {
+  position: relative;
+}
+
+.iframewebpage {
+  z-index:1
+}
+
+.iframeBlocker{
+  position:absolute;
+  top: 0; left: 0; width:95%;
+  height:95%;
+  background-color:aliceblue;
+  opacity:0.1;
 }
