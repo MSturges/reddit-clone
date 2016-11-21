@@ -8,6 +8,7 @@ class Header extends Component {
 
   showModal(){
     this.props.showModal();
+    $('html,body').scrollTop(0);
   }
 
   logout(){

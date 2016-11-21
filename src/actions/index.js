@@ -28,8 +28,8 @@ import {
           payload: response.data.user.username
         });
         localStorage.setItem('token', response.data.token);
-        localStorage.setItem('userName', response.data.user.id);
-        localStorage.setItem('userId', response.data.user.username);
+        localStorage.setItem('userId', response.data.user.id);
+        localStorage.setItem('userName', response.data.user.username);
         dispatch({ type: HIDE_MODAL });
       })
       .catch(error => {

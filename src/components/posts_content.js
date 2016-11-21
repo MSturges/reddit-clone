@@ -12,14 +12,12 @@ class PostsContent extends Component {
 
   render(){
 
-    console.log(this.props.videoList);
-
     return (
       <div className="main-container">
 
-      {this.props.videoList ? <VideoList videos={this.props.videoList}/> : null}
 
-      <ul>
+      <ul className="list-container-video">
+        {this.props.videoList ? <VideoList videos={this.props.videoList}/> : null}
       </ul>
 
       </div>

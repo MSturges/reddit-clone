@@ -29,8 +29,10 @@ function validityCheck(req, res, next) {
 
 router.post('/addVideo', function(req, res, next) {
 
+console.log(req.body);
 
   if (req.body.id && req.body.title && req.body.embed_url) {
+    console.log('met requirments!!!');
     knex('videos')
     .insert({
       creator_id: req.body.id,
@@ -42,6 +44,7 @@ router.post('/addVideo', function(req, res, next) {
       res.status(200).json({success: 'Success'});
     })
     .catch(function(err){
+      console.log(err);
       res.status(500).json(err);
     })
   } else {

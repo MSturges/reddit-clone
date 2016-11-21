@@ -6,19 +6,58 @@
   overflow:hidden;
   padding: 5px;
 }
-
-.IframeWrapper {
-  position: relative;
+ul.row {
+  padding: 0 !important;
 }
+.list-container-video {
+  margin: 0;
 
-.iframewebpage {
-  z-index:1
-}
+  .video-list-item {
+    list-style: none;
+    display: flex;
+    margin-bottom: 20px;
+    .video-rank {
+      text-align: center;
+      line-height: 85px;
+    }
+    .video-rating {
+      height: 80px;
+      width: 140px;
+      text-align: center;
+      padding-top: 9px;
+      .video-arrow {
+        width: 100%;
+        font-size: 22px;
+      }
+    }
+    .IframeWrapper {
+      position: relative;
+      .iframewebpage {
+        z-index:1;
+        height: 80px;
+        width: 140px;
+      }
+      .iframeBlocker{
+        position:absolute;
+        top: 0; left: 0;
+        width:100%;
+        height:100%;
+        background-color:aliceblue;
+        opacity:0.1;
+      }
+    }
+    .video-creator{
+      margin-left: 10px;
+      h5{
+        padding: 0;
+        margin-top: 2px;
+        margin-bottom: 25px;
+      }
+      .text-video{
+        color: grey;
+      }
 
-.iframeBlocker{
-  position:absolute;
-  top: 0; left: 0; width:95%;
-  height:95%;
-  background-color:aliceblue;
-  opacity:0.1;
+    }
+  }
+
 }

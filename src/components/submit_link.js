@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import * as actions from '../actions';
+import { Link } from 'react-router';
 
 
 class SubmitLink extends Component {
@@ -30,24 +31,29 @@ class SubmitLink extends Component {
     return (
       <div className="main-container">
 
+      <h2 className="video-h">Submit to Reddit</h2>
       <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-      <h5>Create A New Account</h5>
 
         {title.touched && title.error && <div className="error">{title.error}</div>}
-        <fieldset className="form-group">
-        <input {...title} className="form-control" placeholder="Title" type="text"/>
+        <fieldset className="video-field-set">
+        <label>Title:</label>
+        <input {...title} className="form-control input-field-set" placeholder="Title" type="text"/>
         </fieldset>
 
         {embed_url.touched && embed_url.error && <div className="error">{embed_url.error}</div>}
-        <fieldset className="form-group">
-        <input type="embed_url" {...embed_url} className="form-control" type="text" placeholder="Embed URL ONLY"/>
+        <fieldset className="video-field-set">
+        <label>Embed Url:</label>
+        <div className="video-example"></div>
+        <p>Navigate to youtube.com. Click share, Click Embed, then copy & paste link without quoutes.</p>
+        <input type="embed_url" {...embed_url} className="form-control input-field-set" type="text" placeholder="Embed URL"/>
         </fieldset>
 
 
         {this.renderAlert()}
 
-        <div className="signup-btn-container">
-          <button action="submit" className="btn btn-primary signup-btn">SIGN UP</button>
+        <div className="video-btn-container">
+          <button action="submit" className="btn btn-primary video-btn">Submit</button>
+          <Link to="/" className="btn btn-danger video-btn">Back to Front</Link>
         </div>
 
       </form>
