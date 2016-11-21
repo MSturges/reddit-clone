@@ -31,11 +31,12 @@ router.post('/addVideo', function(req, res, next) {
 
 console.log(req.body);
 
-  if (req.body.id && req.body.title && req.body.embed_url) {
-    console.log('met requirments!!!');
+  if (req.body.id && req.body.userName && req.body.title && req.body.embed_url) {
+
     knex('videos')
     .insert({
       creator_id: req.body.id,
+      creator_name: req.body.userName,
       title: req.body.title,
       embed_url: req.body.embed_url,
       rating: 1

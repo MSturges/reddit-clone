@@ -8,8 +8,9 @@ class SubmitLink extends Component {
 
   handleFormSubmit({title, embed_url}) {
     const id = localStorage.getItem('userId');
+    const userName = localStorage.getItem('userName');
 
-    this.props.submitVideo({title, embed_url, id});
+    this.props.submitVideo({title, embed_url, id, userName});
   }
 
 

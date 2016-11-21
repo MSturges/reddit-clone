@@ -6,12 +6,18 @@ exports.up = function(knex, Promise) {
   }).createTable('videos', (table) => {
     table.increments();
     table.integer('creator_id');
+    table.string('creator_name');
     table.string('title');
     table.string('embed_url');
     table.float('rating');
     table.bigInteger('created_at').notNullable().defaultTo(Date.now());
+  }).createTable('comments', (table) => {
+    table.increments();
+    table.integer('creator_id')
+    table.integer('route_id')
+    table.string('comment');
   });
 }
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('users').dropTable('videos');
+  return knex.schema.dropTable('users').dropTable('videos').dropTable('comments');
 };

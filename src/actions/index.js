@@ -103,11 +103,11 @@ import {
     }
   }
 
-  export function submitVideo({title, embed_url, id}){
+  export function submitVideo({title, embed_url, id, userName}){
     return function(dispatch){
       axios({
         url: `${API_URL}/api/v1/videos/addVideo`,
-        data: { title, embed_url, id },
+        data: { title, embed_url, id, userName},
         method: 'post',
         responseType: 'json'
       })

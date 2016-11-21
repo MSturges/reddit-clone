@@ -7,8 +7,6 @@ const VideoList = (props) => {
 
   const VideoItems = props.videos.map((video) => {
 
-    // var ts = video.created_at;
-
     return (
       <li  className="video-list-item" key={video.id}>
 
@@ -29,9 +27,9 @@ const VideoList = (props) => {
 
       <div className="video-creator">
       <h5>{video.title}</h5>
-      <span className="text-video">Submitted by {video.user}.</span>
+      <span className="text-video">Submitted by {video.creator_name}!</span>
       <br/>
-      <span className="text-video">Comments</span>
+      <span className="text-video"><Link to="/video" className="">Comments</Link></span>
 
       </div>
       </li>
