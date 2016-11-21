@@ -7,7 +7,11 @@ const VideoList = (props) => {
 
   const VideoItems = props.videos.map((video) => {
 
+
+
     return (
+
+
       <li  className="video-list-item" key={video.id}>
 
       <div className="video-rank">
@@ -29,7 +33,9 @@ const VideoList = (props) => {
       <h5>{video.title}</h5>
       <span className="text-video">Submitted by {video.creator_name}!</span>
       <br/>
-      <span className="text-video"><Link to="/video" className="">Comments</Link></span>
+      <span className="text-video"><Link to={"/video/" + video.id}>Comments</Link></span>
+      <br/>
+
 
       </div>
       </li>

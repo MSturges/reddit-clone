@@ -1,7 +1,8 @@
 import {
 CREATE_VIDEO,
 VIDEO_ERROR,
-VIDEO_LIST } from '../actions/types';
+VIDEO_LIST,
+VIDEO_SINGLE } from '../actions/types';
 
 
 export default function(state = { videoCreated: false }, action) {
@@ -13,6 +14,9 @@ export default function(state = { videoCreated: false }, action) {
 
     case VIDEO_LIST:
     return { ...state,  videoList: action.payload};
+
+    case VIDEO_SINGLE:
+    return { ...state,  videoSingle: action.payload};
 
     case VIDEO_ERROR:
     return { ...state,  videoError: action.payload};

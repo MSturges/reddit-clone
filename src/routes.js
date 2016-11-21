@@ -12,6 +12,7 @@ export default (
   <Route path="/" component={App}>
   <IndexRoute component={PostsContent} />
   <Route path="/submit" component={RequireAuth(SubmitLink)}/>
-  <Route path="/video" component={Comment}/>
+
+  <Route  path="/video/:Id" component={Comment} />
   </Route>
 );

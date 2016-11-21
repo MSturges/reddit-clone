@@ -1,14 +1,47 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
 import * as actions from '../actions';
-import { Link } from 'react-router';
+import { connect } from 'react-redux';
+import { browserHistory } from 'react-router';
 
 class Comment extends Component {
+
+
+
+componentWillMount(){
+  browserHistory.listen((location) => {
+    var path = location.pathname;
+    var id = path.slice(7, 11)
+    this.props.getVideo(id);
+  })
+}
+
+
   render(){
-    return (
-      <div>Comments Page bitch!</div>
-    )
+
+    if (this.props.video) {
+      var video = this.props.video;
+
+      console.log(video.embed_url);
+
+      return (
+        <div>
+        <iframe className="video_comment"src={video.embed_url} frameborder="1" allowfullscreen></iframe>
+        </div>
+      )
+    } else {
+      return(
+        <div className="animated bounce">Loading...</div>
+      )
+    }
   }
 }
 
-export default Comment;
+
+function mapStateToProps(state) {
+  return {
+    video: state.video.videoSingle
+  };
+}
+
+export default connect(mapStateToProps, actions)(Comment);

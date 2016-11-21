@@ -8,3 +8,4 @@ export const DELETE_ERROR = 'DELETE_ERROR';
 export const CREATE_VIDEO = 'CREATE_VIDEO';
 export const VIDEO_ERROR = 'VIDEO_ERROR';
 export const VIDEO_LIST = 'VIDEO_LIST';
+export const VIDEO_SINGLE = 'VIDEO_SINGLE';

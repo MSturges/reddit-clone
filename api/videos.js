@@ -62,5 +62,20 @@ router.get('/getVideos', function(req, res, next){
   });
 })
 
+router.get('/video/:id', (req,res,next) => {
+
+  console.log('!!!!', req.params.id);
+  
+  knex('videos')
+  .where({id: req.params.id})
+  .first()
+  .then((video) => {
+    res.status(200).json(video);
+  })
+  .catch((err) => {
+    res.json(err);
+  })
+})
+
 
 module.exports = router
