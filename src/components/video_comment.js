@@ -4,6 +4,8 @@ import * as actions from '../actions';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 
+import SubmitComment from './make_coment';
+
 class Comment extends Component {
 
 
@@ -26,7 +28,10 @@ componentWillMount(){
 
       return (
         <div>
-        <iframe className="video_comment"src={video.embed_url} frameborder="1" allowfullscreen></iframe>
+        <iframe className="video_comment"src={video.embed_url} frameBorder="1" allowFullScreen></iframe>
+
+              <SubmitComment/>
+
         </div>
       )
     } else {

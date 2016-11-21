@@ -5,7 +5,7 @@ VIDEO_LIST,
 VIDEO_SINGLE } from '../actions/types';
 
 
-export default function(state = { videoCreated: false }, action) {
+export default function(state = { videoCreated: false, commentCreated: false }, action) {
 
   switch(action.type) {
 
@@ -20,6 +20,9 @@ export default function(state = { videoCreated: false }, action) {
 
     case VIDEO_ERROR:
     return { ...state,  videoError: action.payload};
+
+    case CREATE_COMMENT:
+    return { ...state,  commentCreated: true};
 
   }
   return state;

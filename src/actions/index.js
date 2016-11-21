@@ -12,7 +12,8 @@ import {
   CREATE_VIDEO,
   VIDEO_ERROR,
   VIDEO_LIST,
-  VIDEO_SINGLE } from './types';
+  VIDEO_SINGLE,
+  CREATE_COMMENT } from './types';
 
   const API_URL = "http://localhost:1337"
 
@@ -156,6 +157,29 @@ import {
       axios({
         url: `${API_URL}/api/v1/videos/video/${id}`,
         method: 'get',
+        responseType: 'json'
+      })
+      .then(response => {
+        dispatch({
+          type: VIDEO_SINGLE,
+          payload: response.data
+        })
+      })
+      .catch(error => {
+        dispatch({
+          type: VIDEO_ERROR,
+          payload: error.response.data.error
+        });
+      });
+    }
+  }
+
+  export function submitComment( ){
+    return function(dispatch){
+      axios({
+        url: `${API_URL}/api/v1/comments/`,
+        method: 'post',
+        data: { },
         responseType: 'json'
       })
       .then(response => {

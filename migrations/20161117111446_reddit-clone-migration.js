@@ -13,8 +13,8 @@ exports.up = function(knex, Promise) {
     table.bigInteger('created_at').notNullable().defaultTo(Date.now());
   }).createTable('comments', (table) => {
     table.increments();
-    table.integer('creator_id')
-    table.integer('route_id')
+    table.integer('creator_name')
+    table.integer('comment_id')
     table.string('comment');
   });
 }
