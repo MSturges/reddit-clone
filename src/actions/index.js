@@ -18,6 +18,7 @@ import {
 
   const API_URL = "http://localhost:1337"
 
+// AUTHORIZATION till line 95
   export function signupUser({reqUserName, password}){
     return function(dispatch){
       axios({
@@ -83,7 +84,6 @@ import {
   }
 
   export function logout() {
-
     localStorage.removeItem('token');
     localStorage.removeItem('userName');
     localStorage.removeItem('userId');
@@ -94,6 +94,7 @@ import {
     }
   }
 
+// Modals
   export function showModal(){
     return function(dispatch){
       dispatch({ type: SHOW_MODAL });
@@ -107,6 +108,7 @@ import {
     }
   }
 
+// videos
   export function submitVideo({title, embed_url, id, userName}){
     return function(dispatch){
       axios({
@@ -175,6 +177,7 @@ import {
     }
   }
 
+// Comments
   export function submitComment({comment_id, user_id, user_name, comment} ){
     return function(dispatch){
       axios({

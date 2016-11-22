@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
-import * as actions from '../actions';
+import * as actions from '../../actions';
 import { Link } from 'react-router';
 import { browserHistory } from 'react-router';
 

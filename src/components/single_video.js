@@ -4,8 +4,8 @@ import * as actions from '../actions';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 
-import SubmitComment from './make_coment';
-import CommentList from './comments_list'
+import SubmitComment from './comment/make_coment';
+import CommentList from './comment/comments_list'
 
 class Comment extends Component {
 
@@ -18,15 +18,8 @@ class Comment extends Component {
     })
   }
 
-
-
-
   render(){
-
-
     if (this.props.video && this.props.commentList) {
-
-
       var video = this.props.video;
 
       return (
@@ -34,7 +27,7 @@ class Comment extends Component {
         <iframe className="video_comment"src={video.embed_url} frameBorder="1" allowFullScreen></iframe>
 
         <SubmitComment/>
-        
+
         <CommentList comments={this.props.commentList}/>
 
         <ul>
@@ -55,7 +48,7 @@ function mapStateToProps(state) {
   return {
     video: state.video.videoSingle,
     submitedComment: state.video.commentCreated,
-    commentList: state.video.commentList
+    commentList: state.comment.commentList
   };
 }
 

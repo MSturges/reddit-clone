@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import SigninSide from './auth/signin_side';
+import SigninSide from '../auth/signin_side';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
+import * as actions from '../../actions';
 import { Link } from 'react-router'
 
 

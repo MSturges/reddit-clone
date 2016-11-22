@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import VideoList from './video_list'
+import VideoList from './video/video_list'
 
 
 class PostsContent extends Component {

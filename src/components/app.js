@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
-import Header from './header';
-import SideContent from './side_content';
-import ModalUser from './modal_user';
+import Header from './header-footer-sidebar/header';
+import SideContent from './header-footer-sidebar/sidebar_right';
+import ModalUser from './modal/modal_user';
 
 
 class App extends Component {

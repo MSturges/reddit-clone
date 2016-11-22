@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import ModalUser from './modal_user';
-import * as actions from '../actions';
+import ModalUser from '../modal/modal_user';
+import * as actions from '../../actions';
 
 class Header extends Component {
 

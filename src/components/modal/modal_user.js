@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
-import Signup from './auth/signup'
-import Signin from './auth/signin'
+import * as actions from '../../actions';
+import Signup from '../auth/signup'
+import Signin from '../auth/signin'
 
 class ModalUser extends Component {
 
