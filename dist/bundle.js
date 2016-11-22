@@ -29112,7 +29112,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_URL = "http://localhost:1337";
+	var API_URL = "https://localhost:1337";
 
 	function signupUser(_ref) {
 	  var reqUserName = _ref.reqUserName,
