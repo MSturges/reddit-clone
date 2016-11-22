@@ -5,8 +5,6 @@ const CommentList = (props) => {
 
   const VideoItems = props.comments.reviews.map((comment) => {
 
-    console.log(comment);
-
     return (
       <li  className="video-list-item" key={comment.id}>
 
