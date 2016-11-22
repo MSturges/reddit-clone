@@ -2,10 +2,6 @@ import axios from 'axios'
 import { browserHistory } from 'react-router';
 
 import {
-  AUTH_USER,
-  SIGNIN_ERROR,
-  SIGNUP_ERROR,
-  UNAUTH_USER,
   SHOW_MODAL,
   HIDE_MODAL,
   DELETE_ERROR,
@@ -14,212 +10,37 @@ import {
   VIDEO_LIST,
   VIDEO_SINGLE,
   CREATE_COMMENT,
-  GET_COMMENTS } from './types';
+  GET_COMMENTS
+} from './types';
 
-  const API_URL = "http://localhost:1337"
+const API_URL = "http://localhost:1337"
 
-// AUTHORIZATION till line 95
-  export function signupUser({reqUserName, password}){
-    return function(dispatch){
-      axios({
-        url: `${API_URL}/api/v1/auth/signup`,
-        data: { reqUserName, password },
-        method: 'post',
-        responseType: 'json'
-      })
-      .then(response => {
-        dispatch({
-          type: AUTH_USER,
-          payload: response.data.user.username
-        });
-        localStorage.setItem('token', response.data.token);
-        localStorage.setItem('userId', response.data.user.id);
-        localStorage.setItem('userName', response.data.user.username);
-        dispatch({ type: HIDE_MODAL });
-      })
-      .catch(error => {
-        dispatch({
-          type: SIGNUP_ERROR,
-          payload: error.response.data.error
-        });
-      });
-    }
-  }
+// user authorization actions
+import signupUser from './actions_folder/auth/signupUser'
+import signinUser from './actions_folder/auth/signinUser'
+import userIsSignedIn from './actions_folder/auth/userIsSignedIn'
+import logout from './actions_folder/auth/logout'
 
-  export function signinUser({reqUserName, password}){
-    return function(dispatch){
-      axios({
-        url: `${API_URL}/api/v1/auth/signin`,
-        data: { reqUserName, password },
-        method: 'post',
-        responseType: 'json'
-      })
-      .then(response => {
-        dispatch({
-          type: AUTH_USER,
-          payload: response.data.user.username
-        });
-        dispatch({ type: DELETE_ERROR });
-        localStorage.setItem('token', response.data.token);
-        localStorage.setItem('userId', response.data.user.id);
-        localStorage.setItem('userName', response.data.user.username);
-        dispatch({ type: HIDE_MODAL });
-      })
-      .catch(error => {
-        dispatch({
-          type: SIGNIN_ERROR,
-          payload: error.response.data.error
-        });
-      });
-    }
-  }
-
-  export function userIsSignedIn({user}){
-    return function(dispatch){
-      dispatch({
-        type: AUTH_USER,
-        payload: user
-      });
-    }
-  }
-
-  export function logout() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('userName');
-    localStorage.removeItem('userId');
-    return function(dispatch){
-      dispatch({
-        type: UNAUTH_USER,
-      })
-    }
-  }
-
-// Modals
-  export function showModal(){
-    return function(dispatch){
-      dispatch({ type: SHOW_MODAL });
-    }
-  }
-
-  export function hideModal(){
-    return function(dispatch){
-      dispatch({ type: HIDE_MODAL });
-      dispatch({type: DELETE_ERROR });
-    }
-  }
-
-// videos
-  export function submitVideo({title, embed_url, id, userName}){
-    return function(dispatch){
-      axios({
-        url: `${API_URL}/api/v1/videos/addVideo`,
-        data: { title, embed_url, id, userName},
-        method: 'post',
-        responseType: 'json'
-      })
-      .then(response => {
-        dispatch({
-          type: CREATE_VIDEO,
-        })
-        browserHistory.push('/');
-      })
-      .catch(error => {
-        dispatch({
-          type: VIDEO_ERROR,
-          payload: error.response.data.error
-        });
-      });
-    }
-  }
-
-  export function getVideos(){
-    return function(dispatch){
-      axios({
-        url: `${API_URL}/api/v1/videos/getVideos`,
-        method: 'get',
-        responseType: 'json'
-      })
-      .then(response => {
-        dispatch({
-          type: VIDEO_LIST,
-          payload: response.data
-        })
-      })
-      .catch(error => {
-        dispatch({
-          type: VIDEO_ERROR,
-          payload: error.response.data.error
-        });
-      });
-    }
-  }
+export { signupUser, signinUser, userIsSignedIn, logout }
 
 
-  export function getVideo(id){
-    return function(dispatch){
-      axios({
-        url: `${API_URL}/api/v1/videos/video/${id}`,
-        method: 'get',
-        responseType: 'json'
-      })
-      .then(response => {
-        dispatch({
-          type: VIDEO_SINGLE,
-          payload: response.data
-        })
-      })
-      .catch(error => {
-        dispatch({
-          type: VIDEO_ERROR,
-          payload: error.response.data.error
-        });
-      });
-    }
-  }
+// Modals actions
+import showModal from './actions_folder/modal/showModal'
+import hideModal from './actions_folder/modal/hideModal'
 
-// Comments
-  export function submitComment({comment_id, user_id, user_name, comment} ){
-    return function(dispatch){
-      axios({
-        url: `${API_URL}/api/v1/comments/submitComment`,
-        method: 'post',
-        data: {comment_id, user_id, user_name, comment},
-        responseType: 'json'
-      })
-      .then(response => {
-        dispatch({
-          type: CREATE_COMMENT,
-          payload: response.data
-        })
-      })
-      .catch(error => {
-        dispatch({
-          type: VIDEO_ERROR,
-          payload: error.response.data.error
-        });
-      });
-    }
-  }
+export { showModal, hideModal }
 
-  export function getComments({id} ){
-    return function(dispatch){
-      axios({
-        url: `${API_URL}/api/v1/comments/getVideoComments`,
-        method: 'post',
-        data: { id },
-        responseType: 'json'
-      })
-      .then(response => {
-        dispatch({
-          type: GET_COMMENTS,
-          payload: response.data
-        })
-      })
-      .catch(error => {
-        dispatch({
-          type: VIDEO_ERROR,
-          payload: error.response.data.error
-        });
-      });
-    }
-  }
+
+// Video Actions
+import submitVideo from './actions_folder/videos/submitVideo'
+import getVideos from './actions_folder/videos/getVideos'
+import getVideo from './actions_folder/videos/getVideo'
+
+export {submitVideo, getVideos, getVideo }
+
+
+// Comment Actions
+import submitComment from './actions_folder/comments/submitComment'
+import getComments from './actions_folder/comments/getComments'
+
+export { submitComment, getComments }

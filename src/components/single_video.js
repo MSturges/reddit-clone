@@ -13,13 +13,16 @@ class Comment extends Component {
     browserHistory.listen((location) => {
       var path = location.pathname;
       var id = path.slice(7, 11)
+
       this.props.getVideo(id)
       this.props.getComments({id})
     })
   }
 
   render(){
-    if (this.props.video && this.props.commentList) {
+
+
+    if (this.props.video) {
       var video = this.props.video;
 
       return (
@@ -28,9 +31,8 @@ class Comment extends Component {
 
         <SubmitComment/>
 
-        <CommentList comments={this.props.commentList}/>
-
         <ul>
+        {this.props.commentList.reviews  ? <CommentList comments={this.props.commentList}/> : <h1>No Comments!</h1>}
         </ul>
 
         </div>
