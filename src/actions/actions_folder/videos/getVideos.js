@@ -4,7 +4,7 @@ import {
   VIDEO_LIST,
   VIDEO_ERROR } from '../../types'
 
-const API_URL = "http://localhost:1337"
+const API_URL = "https://localhost:1337"
 
 export default function(){
   return function(dispatch){

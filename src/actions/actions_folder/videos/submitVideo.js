@@ -5,7 +5,7 @@ import {
   CREATE_VIDEO,
   VIDEO_ERROR } from '../../types'
 
-const API_URL = "http://localhost:1337"
+const API_URL = "https://localhost:1337"
 
 export default function({title, embed_url, id, userName}){
   return function(dispatch){
