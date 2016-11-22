@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { browserHistory } from 'react-router';
-const API_URL = "http://localhost:1337"
+// const API_URL = "http://localhost:1337"
 
 import {
   CREATE_VIDEO,
@@ -10,7 +10,7 @@ import {
 export default function({title, embed_url, id, userName}){
   return function(dispatch){
     axios({
-      url: `${API_URL}/api/v1/videos/addVideo`,
+      url: `/api/v1/videos/addVideo`,
       data: { title, embed_url, id, userName},
       method: 'post',
       responseType: 'json'

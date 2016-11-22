@@ -1,5 +1,5 @@
 import axios from 'axios'
-const API_URL = "http://localhost:1337"
+// const API_URL = "http://localhost:1337"
 
 import {
   AUTH_USER,
@@ -11,7 +11,7 @@ import {
 export default function signupUser({reqUserName, password}){
   return function(dispatch){
     axios({
-      url: `${API_URL}/api/v1/auth/signup`,
+      url: `/api/v1/auth/signup`,
       data: { reqUserName, password },
       method: 'post',
       responseType: 'json'

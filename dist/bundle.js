@@ -29112,15 +29112,13 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_URL = "https://localhost:1337";
-
 	function signupUser(_ref) {
 	  var reqUserName = _ref.reqUserName,
 	      password = _ref.password;
 
 	  return function (dispatch) {
 	    (0, _axios2.default)({
-	      url: API_URL + '/api/v1/auth/signup',
+	      url: '/api/v1/auth/signup',
 	      data: { reqUserName: reqUserName, password: password },
 	      method: 'post',
 	      responseType: 'json'
@@ -29141,6 +29139,7 @@
 	    });
 	  };
 	}
+	// const API_URL = "http://localhost:1337"
 
 /***/ },
 /* 291 */
@@ -29158,7 +29157,7 @@
 
 	  return function (dispatch) {
 	    (0, _axios2.default)({
-	      url: API_URL + '/api/v1/auth/signin',
+	      url: '/api/v1/auth/signin',
 	      data: { reqUserName: reqUserName, password: password },
 	      method: 'post',
 	      responseType: 'json'
@@ -29189,8 +29188,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_URL = "https://localhost:1337";
-
 /***/ },
 /* 292 */
 /***/ function(module, exports, __webpack_require__) {
@@ -29219,8 +29216,6 @@
 	var _types = __webpack_require__(289);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var API_URL = "https://localhost:1337";
 
 /***/ },
 /* 293 */
@@ -29306,7 +29301,7 @@
 
 	  return function (dispatch) {
 	    (0, _axios2.default)({
-	      url: API_URL + '/api/v1/videos/addVideo',
+	      url: '/api/v1/videos/addVideo',
 	      data: { title: title, embed_url: embed_url, id: id, userName: userName },
 	      method: 'post',
 	      responseType: 'json'
@@ -29334,8 +29329,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_URL = "https://localhost:1337";
-
 /***/ },
 /* 297 */
 /***/ function(module, exports, __webpack_require__) {
@@ -29349,7 +29342,7 @@
 	exports.default = function () {
 	  return function (dispatch) {
 	    (0, _axios2.default)({
-	      url: API_URL + '/api/v1/videos/getVideos',
+	      url: '/api/v1/videos/getVideos',
 	      method: 'get',
 	      responseType: 'json'
 	    }).then(function (response) {
@@ -29374,8 +29367,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_URL = "https://localhost:1337";
-
 /***/ },
 /* 298 */
 /***/ function(module, exports, __webpack_require__) {
@@ -29389,7 +29380,7 @@
 	exports.default = function (id) {
 	  return function (dispatch) {
 	    (0, _axios2.default)({
-	      url: API_URL + '/api/v1/videos/video/' + id,
+	      url: '/api/v1/videos/video/' + id,
 	      method: 'get',
 	      responseType: 'json'
 	    }).then(function (response) {
@@ -29414,8 +29405,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_URL = "https://localhost:1337";
-
 /***/ },
 /* 299 */
 /***/ function(module, exports, __webpack_require__) {
@@ -29434,7 +29423,7 @@
 
 	  return function (dispatch) {
 	    (0, _axios2.default)({
-	      url: API_URL + '/api/v1/comments/submitComment',
+	      url: '/api/v1/comments/submitComment',
 	      method: 'post',
 	      data: { comment_id: comment_id, user_id: user_id, user_name: user_name, comment: comment },
 	      responseType: 'json'
@@ -29460,8 +29449,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_URL = "https://localhost:1337";
-
 /***/ },
 /* 300 */
 /***/ function(module, exports, __webpack_require__) {
@@ -29477,7 +29464,7 @@
 
 	  return function (dispatch) {
 	    (0, _axios2.default)({
-	      url: API_URL + '/api/v1/comments/getVideoComments',
+	      url: '/api/v1/comments/getVideoComments',
 	      method: 'post',
 	      data: { id: id },
 	      responseType: 'json'
@@ -29503,8 +29490,6 @@
 	var _types = __webpack_require__(289);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var API_URL = "https://localhost:1337";
 
 /***/ },
 /* 301 */

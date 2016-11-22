@@ -1,5 +1,5 @@
 import axios from 'axios'
-const API_URL = "http://localhost:1337"
+// const API_URL = "http://localhost:1337"
 
 import {
   GET_COMMENTS,
@@ -8,7 +8,7 @@ import {
 export default function({id} ){
   return function(dispatch){
     axios({
-      url: `${API_URL}/api/v1/comments/getVideoComments`,
+      url: `/api/v1/comments/getVideoComments`,
       method: 'post',
       data: { id },
       responseType: 'json'
