@@ -1,10 +1,10 @@
 import axios from 'axios'
+const API_URL = "http://localhost:1337"
 
 import {
   VIDEO_LIST,
   VIDEO_ERROR } from '../../types'
 
-const API_URL = "https://localhost:1337"
 
 export default function(){
   return function(dispatch){

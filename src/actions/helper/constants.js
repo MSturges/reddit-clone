@@ -1,4 +1,1 @@
-// This is for development
-// const API_URL = "http://localhost:1337"
-
-// const API_URL = "http://localhost:1337"
+export const API_URL = process.env.NODE_ENV === 'development' ? 'https://localhost:1337' : window.location.origin
