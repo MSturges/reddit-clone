@@ -28,12 +28,12 @@ class Comment extends Component {
       return (
         <div>
         <iframe className="video_comment"src={video.embed_url} frameBorder="1" allowFullScreen></iframe>
-
         <SubmitComment/>
 
-        <ul>
+        <ul className="comment-list-container">
         {this.props.commentList.reviews  ? <CommentList comments={this.props.commentList}/> : <h1>No Comments!</h1>}
         </ul>
+        
 
         </div>
       )

@@ -9,21 +9,14 @@ class SubmitComment extends Component {
 
 
   handleFormSubmit({comment}) {
-
     browserHistory.listen((location) => {
       var path = location.pathname;
       var comment_id = path.slice(7, 11)
-
-
       const user_name = localStorage.getItem('userName');
       const user_id = localStorage.getItem('userId');
-
       this.props.submitComment({comment_id, user_id, user_name, comment});
     })
-
-
   }
-
 
   render(){
     const { handleSubmit, fields: { comment }} = this.props
@@ -38,9 +31,11 @@ class SubmitComment extends Component {
         <input {...comment} className="form-control" placeholder="Comment" type="text"/>
         </fieldset>
 
-        <div className="video-field-set">
+        <fieldset className="video-field-set">
+          <div className="comment-submit-container" >
           <button action="submit" className="btn btn-primary">Submit Comment</button>
-        </div>
+          </div>
+        </fieldset>
 
       </form>
 

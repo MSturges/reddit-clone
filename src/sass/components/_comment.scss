@@ -5,3 +5,32 @@
   height: 310px;
   display: block;
 }
+
+
+
+.comment-list-container {
+  margin-right: 315px !important;
+  min-width: 0;
+  margin: 0;
+  padding-left: 25px;
+  display: block;
+
+  .video-list-item {
+    border-radius: 4px;
+    list-style: none;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid grey;
+    margin-bottom: 10px;
+    .comment-header{
+      text-decoration: underline;
+      font-size: 20px;
+
+    }
+    .comment-container{
+      p {
+
+      }
+    }
+  }
+}

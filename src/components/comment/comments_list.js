@@ -5,10 +5,18 @@ const CommentList = (props) => {
 
   const VideoItems = props.comments.reviews.map((comment) => {
 
+    console.log(comment);
+
     return (
       <li  className="video-list-item" key={comment.id}>
-        <h3>hello!!!!</h3>
-        <h2>hi</h2>
+
+      <div className="comment-header">
+        <span>Posted by: {comment.username}</span>
+      </div>
+      <div className="comment-container">
+        <p>{comment.review}</p>
+      </div>
+
       </li>
     );
   });
