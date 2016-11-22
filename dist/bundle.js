@@ -29189,7 +29189,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_URL = "http://localhost:1337";
+	var API_URL = "https://localhost:1337";
 
 /***/ },
 /* 292 */
@@ -29220,7 +29220,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_URL = "http://localhost:1337";
+	var API_URL = "https://localhost:1337";
 
 /***/ },
 /* 293 */
@@ -29334,7 +29334,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_URL = "http://localhost:1337";
+	var API_URL = "https://localhost:1337";
 
 /***/ },
 /* 297 */
@@ -29374,7 +29374,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_URL = "http://localhost:1337";
+	var API_URL = "https://localhost:1337";
 
 /***/ },
 /* 298 */
@@ -29414,7 +29414,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_URL = "http://localhost:1337";
+	var API_URL = "https://localhost:1337";
 
 /***/ },
 /* 299 */
@@ -29460,7 +29460,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_URL = "http://localhost:1337";
+	var API_URL = "https://localhost:1337";
 
 /***/ },
 /* 300 */
@@ -29504,7 +29504,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var API_URL = "http://localhost:1337";
+	var API_URL = "https://localhost:1337";
 
 /***/ },
 /* 301 */
