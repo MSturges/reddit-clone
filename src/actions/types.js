@@ -10,3 +10,4 @@ export const VIDEO_ERROR = 'VIDEO_ERROR';
 export const VIDEO_LIST = 'VIDEO_LIST';
 export const VIDEO_SINGLE = 'VIDEO_SINGLE';
 export const CREATE_COMMENT = 'CREATE_COMMENT';
+export const GET_COMMENTS = 'GET_COMMENTS';

@@ -62,10 +62,7 @@ router.get('/getVideos', function(req, res, next){
   });
 })
 
-router.get('/video/:id', (req,res,next) => {
-
-  console.log('!!!!', req.params.id);
-  
+router.get('/video/:id', (req,res,next) => {  
   knex('videos')
   .where({id: req.params.id})
   .first()

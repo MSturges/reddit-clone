@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     table.string('password');
   }).createTable('videos', (table) => {
     table.increments();
-    table.integer('creator_id');
+    table.integer('creator_id').unsigned().references('users.id').onUpdate('CASCADE').index();
     table.string('creator_name');
     table.string('title');
     table.string('embed_url');
@@ -13,11 +13,12 @@ exports.up = function(knex, Promise) {
     table.bigInteger('created_at').notNullable().defaultTo(Date.now());
   }).createTable('comments', (table) => {
     table.increments();
-    table.integer('creator_name')
-    table.integer('comment_id')
+    table.string('creator_name');
+    table.integer('creator_id').unsigned().references('users.id').onUpdate('CASCADE').index();
+    table.integer('comment_id').unsigned().references('videos.id').onUpdate('CASCADE').index();
     table.string('comment');
   });
 }
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('users').dropTable('videos').dropTable('comments');
+  return knex.schema.dropTable('comments').dropTable('videos').dropTable('users');
 };

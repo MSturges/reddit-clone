@@ -5,32 +5,40 @@ import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 
 import SubmitComment from './make_coment';
+import CommentList from './comments_list'
 
 class Comment extends Component {
 
+  componentWillMount(){
+    browserHistory.listen((location) => {
+      var path = location.pathname;
+      var id = path.slice(7, 11)
+      this.props.getVideo(id)
+      this.props.getComments({id})
+    })
+  }
 
 
-componentWillMount(){
-  browserHistory.listen((location) => {
-    var path = location.pathname;
-    var id = path.slice(7, 11)
-    this.props.getVideo(id);
-  })
-}
 
 
   render(){
 
-    if (this.props.video) {
-      var video = this.props.video;
 
-      console.log(video.embed_url);
+    if (this.props.video && this.props.commentList) {
+
+
+      var video = this.props.video;
 
       return (
         <div>
         <iframe className="video_comment"src={video.embed_url} frameBorder="1" allowFullScreen></iframe>
 
-              <SubmitComment/>
+        <SubmitComment/>
+        
+        <CommentList comments={this.props.commentList}/>
+
+        <ul>
+        </ul>
 
         </div>
       )
@@ -45,7 +53,9 @@ componentWillMount(){
 
 function mapStateToProps(state) {
   return {
-    video: state.video.videoSingle
+    video: state.video.videoSingle,
+    submitedComment: state.video.commentCreated,
+    commentList: state.video.commentList
   };
 }
 

@@ -7,18 +7,20 @@ import { browserHistory } from 'react-router';
 class SubmitComment extends Component {
 
 
-  componentWillMount(){
+
+  handleFormSubmit({comment}) {
+
     browserHistory.listen((location) => {
       var path = location.pathname;
-      var id = path.slice(7, 11)
+      var comment_id = path.slice(7, 11)
+
+
+      const user_name = localStorage.getItem('userName');
+      const user_id = localStorage.getItem('userId');
+
+      this.props.submitComment({comment_id, user_id, user_name, comment});
     })
-  }
 
-  handleFormSubmit({comment, embed_url}) {
-
-    const userName = localStorage.getItem('userName');
-
-    this.props.submitComment();
 
   }
 
@@ -59,7 +61,7 @@ function validate(formProps){
 
 
 function mapStateToProps(state) {
-  // return {errorMessage: state.auth.signUpError};
+  return {errorMessage: state.auth.signUpError};
 }
 
 export default reduxForm({

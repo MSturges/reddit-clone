@@ -2,7 +2,9 @@ import {
 CREATE_VIDEO,
 VIDEO_ERROR,
 VIDEO_LIST,
-VIDEO_SINGLE } from '../actions/types';
+VIDEO_SINGLE,
+CREATE_COMMENT,
+GET_COMMENTS } from '../actions/types';
 
 
 export default function(state = { videoCreated: false, commentCreated: false }, action) {
@@ -23,6 +25,9 @@ export default function(state = { videoCreated: false, commentCreated: false }, 
 
     case CREATE_COMMENT:
     return { ...state,  commentCreated: true};
+
+    case GET_COMMENTS:
+    return { ...state,  commentList: action.payload};
 
   }
   return state;
